@@ -1,0 +1,6 @@
+Flask
+requests
+readability-lxml
+pymupdf
+beautifulsoup4
+tiktoken
