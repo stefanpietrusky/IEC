@@ -1,7 +1,7 @@
 # IEC V1.5 APP
 ## Individual Educational Chatbot
 
-This repository, developed by Stefan Pietrusky, is based on the article published at... In this article, I describe the functionality of an enhanced version (V1.5) of the IEC application. The first version has already been tested and provided important results for improvement. The function of controlling the response level of the model used by clicking a button was very well received by the test subjects [1]. In the extended application, the Gradio framework is no longer used, but the interface is implemented with HTML, CSS and JS. The level prompts have been optimized. The extraction of content has also been optimized. This is an open source project for educational and research purposes.
+This repository, developed by Stefan Pietrusky, is based on the article published at... In this article, I describe the functionality of an enhanced version (V1.5) of the IEC application. The first version has already been tested and provided important results for improvement. The function of controlling the response level of the model used by clicking a button was very well received by the test subjects [1](https://arxiv.org/abs/2412.16165). In the extended application, the Gradio framework is no longer used, but the interface is implemented with HTML, CSS and JS. The level prompts have been optimized. The extraction of content has also been optimized. This is an open source project for educational and research purposes.
 
 ![IEC V1.5 Structure and mode of operation IEC V1.5 (Image by author)](images/IECV1.5_APP_STRUCTURE.png)
 
