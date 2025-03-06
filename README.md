@@ -8,6 +8,7 @@ This repository, developed by Stefan Pietrusky, is based on the article publishe
 
 ## IEC working principle
 Below is a short GIF showing the structure and function of the app.
+
 ![ICE V1.5 (Gif by author](images/IECV1.5_APP.gif)
 
 ## IEC availability
