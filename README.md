@@ -3,11 +3,14 @@
 
 This repository, developed by Stefan Pietrusky, is based on the article published at [Level Up Coding](https://medium.com/gitconnected/iec-v1-5-individual-educational-chatbot-f859456ec760). In this article, I describe the functionality of an enhanced version (V1.5) of the IEC application. The first version has already been tested and provided important results for improvement. The function of controlling the response level of the model used by clicking a button was very well received by the test subjects [[1]](https://arxiv.org/abs/2412.16165). In the extended application, the Gradio framework is no longer used, but the interface is implemented with HTML, CSS and JS. The level prompts have been optimized. The extraction of content has also been optimized. This is an open source project for educational and research purposes.
 
+## IEC Structure
 ![IEC V1.5 Structure and mode of operation IEC V1.5 (Image by author)](images/IECV1.5_APP_STRUCTURE.png)
 
+## IEC working principle
 Below is a short GIF showing the structure and function of the app.
 ![ICE V1.5 (Gif by author](images/IECV1.5_APP.gif)
 
+## IEC availability
 The code to run the app is already in the repository.To make the app available via the Internet and not be restricted to the local network, a tunnel tool such as ngrok must be used! Your own computer becomes the server.
 
 ![Making IEC available via the Internet (Image by author)](images/IECV1.5_TUNNEL_NGROK.png)
