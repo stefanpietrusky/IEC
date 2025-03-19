@@ -26,7 +26,7 @@ git clone https://github.com/stefanpietrusky/iecv1.5.git
 pip install -r requirements.txt
 ```
 3. Install Ollama and load the model [Llama3.1](https://ollama.com/library/llama3.1) (8B). Alternatively, another model can be used.
-4. Install Python [python=3.10.11](https://www.python.org/downloads/release/python-31011/).
+4. Install Python [3.10.11](https://www.python.org/downloads/release/python-31011/).
 5. Start the IEC app:
 ```bash 
 python app.py
