@@ -34,6 +34,6 @@ pip install -r requirements.txt
 python app.py
 ```
 ## References
-[1] Pietrusky, S. (2025). IEC V1.5: Individual Educational Chatbot. A tool for individual exchange with PDF files and websites. Level Up Coding. Link
+[1] Pietrusky, S. (2025). Individual learning support made easy. IEC V1.5: Individual Educational Chatbot. A tool for individual exchange with PDF files and websites. Level Up Coding.
 
 [2] Pietrusky, S. (2024). Promoting AI Literacy in Higher Education: Evaluating the IEC-V1 Chatbot for Personalized Learning and Educational Equity. ARXIV CS.CY
