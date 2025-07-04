@@ -1,3 +1,5 @@
+![](images/IEC_Logo.png)
+
 # IEC V1.5 APP
 ## Individual Educational Chatbot
 
