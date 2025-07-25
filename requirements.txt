@@ -1,6 +1,11 @@
-Flask
-requests
-readability-lxml
-pymupdf
-beautifulsoup4
-tiktoken
+Flask>=2.0
+Werkzeug>=2.2
+requests>=2.28
+readability-lxml>=0.8
+PyMuPDF>=1.22
+beautifulsoup4>=4.11
+tiktoken>=0.3
+edge-tts>=1.0
+faiss-cpu>=1.7
+numpy>=1.24
+duckduckgo-search>=2.0
