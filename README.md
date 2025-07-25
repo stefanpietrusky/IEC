@@ -11,38 +11,49 @@ Unlike IEC V1.5, which only extracted text from URLs and PDFs and answered quest
 
 ## IEC Structure
 ```mermaid
+---
+config:
+  theme: redux
+  look: neo
+  layout: elk
+---
 flowchart TB
-  subgraph Frontend
-    A[HTML/CSS/JS] -->|HTTP Requests| B(Flask API)
+ subgraph Frontend["Frontend"]
+        B("Flask API")
+        A["HTML/CSS/JS"]
   end
-
-  subgraph Backend
-    B --> C[extract_content]
-    B --> D[ask_question]
-    B --> E[list_models]
-    B --> F[list_extractions]
+ subgraph Backend["Backend"]
+        C["extract_content"]
+        D["ask_question"]
+        E["list_models"]
+        F["list_extractions"]
   end
-
-  subgraph Indexation
-    C --> G["Parser (PDF/Web)"]
-    G --> H["FAISS Index Builder"]
-    H --> I["rag_index.faiss"]
+ subgraph Indexation["Indexation"]
+        G["Parser (PDF/Web)"]
+        H["FAISS Index Builder"]
+        I["rag_index.faiss"]
   end
-
-  subgraph RAG_Flow
-    D --> J["Retrieval via FAISS"]
-    J --> K["Per-Source Prompting"]
-    K --> L["Answer summary"]
+ subgraph RAG_Flow["RAG_Flow"]
+        J["Retrieval via FAISS"]
+        K["Per-Source Prompting"]
+        L["Answer summary"]
   end
-
-  subgraph TTS_Logging
-    L --> M["edge-tts → MP3"]
-    L --> O["Conversational-Log (JSON)"]
+ subgraph TTS_Logging["TTS_Logging"]
+        M["edge-tts → MP3"]
+        O["Conversational-Log (JSON)"]
   end
-
-  B -.->|Models| P[ollama CLI]
-  B -->|Data storage| DATA_DIR
-  B -->|Audio/Logs| CONV_ROOT
+    A -- HTTP Requests --> B
+    B --> C & D & E & F
+    C --> G
+    G --> H
+    H --> I
+    D --> J
+    J --> K
+    K --> L
+    L --> M & O
+    B -. Models .-> P["ollama CLI"]
+    B -- Data storage --> DATA_DIR["DATA_DIR"]
+    B -- Audio/Logs --> CONV_ROOT["CONV_ROOT"]
 ```
 
 ## IEC working principle
