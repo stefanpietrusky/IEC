@@ -23,7 +23,7 @@ flowchart TB
     B --> F[list_extractions]
   end
 
-  subgraph Indexierung
+  subgraph Indexation
     C --> G["Parser (PDF/Web)"]
     G --> H["FAISS Index Builder"]
     H --> I["rag_index.faiss"]
@@ -66,21 +66,16 @@ git clone https://github.com/stefanpietrusky/iecvgit
 ```bash 
 pip install -r requirements.txt
 ```
-3. Install [Ollama](https://ollama.com/) and load the default model [Llama3.2](https://ollama.com/library/llama3.2) (3B).
+3. Install [Ollama](https://ollama.com/) and load the default model [Llama3.2](https://ollama.com/library/llama3.2) (3B). Alternatively, another model can be used.
 ```bash 
 ollama pull llama3.2
 ```
-Alternatively, another model can be used.
-
 4. Install the embedding model:
 ```bash 
 ollama pull nomic-embed-text
 ```
-
 5. Install Python [3.10.11](https://www.python.org/downloads/release/python-31011/).
-
 6. Adjust the Edge TTS [voice](https://gist.github.com/BettyJJ/17cbaa1de96235a7f5773b8690a20462) as needed.
-
 7. Start the IEC app:
 ```bash 
 python app.py
