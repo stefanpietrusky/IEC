@@ -24,20 +24,20 @@ flowchart TB
   end
 
   subgraph Indexierung
-    C --> G[Parser (PDF/Web)]
-    G --> H[FAISS Index Builder]
-    H --> I[(rag_index.faiss)]
+    C --> G["Parser (PDF/Web)"]
+    G --> H["FAISS Index Builder"]
+    H --> I["rag_index.faiss"]
   end
 
-  subgraph RAG-Flow
-    D --> J[Retrieval via FAISS]
-    J --> K[Per‑Source Prompting]
-    K --> L[Answer summary]
+  subgraph RAG_Flow
+    D --> J["Retrieval via FAISS"]
+    J --> K["Per-Source Prompting"]
+    K --> L["Answer summary"]
   end
 
-  subgraph TTS & Logging
-    L --> M[edge-tts → MP3]
-    L --> O[Conversational-Log (JSON)]
+  subgraph TTS_Logging
+    L --> M["edge-tts → MP3"]
+    L --> O["Conversational-Log (JSON)"]
   end
 
   B -.->|Models| P[ollama CLI]
@@ -71,12 +71,16 @@ pip install -r requirements.txt
 ollama pull llama3.2
 ```
 Alternatively, another model can be used.
+
 4. Install the embedding model:
 ```bash 
 ollama pull nomic-embed-text
 ```
+
 5. Install Python [3.10.11](https://www.python.org/downloads/release/python-31011/).
+
 6. Adjust the Edge TTS [voice](https://gist.github.com/BettyJJ/17cbaa1de96235a7f5773b8690a20462) as needed.
+
 7. Start the IEC app:
 ```bash 
 python app.py
