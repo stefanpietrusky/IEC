@@ -12,7 +12,6 @@ Unlike IEC V1.5, which only extracted text from URLs and PDFs and answered quest
 ## IEC Structure
 ```mermaid
 flowchart TB
-  %% Subgraphs
   subgraph Frontend
     A[HTML/CSS/JS] -->|HTTP Requests| B(Flask API)
   end
@@ -44,24 +43,6 @@ flowchart TB
   B -.->|Models| P[ollama CLI]
   B -->|Data storage| DATA_DIR
   B -->|Audio/Logs| CONV_ROOT
-
-  %% === Styling ===
-  %% 1. Knotendesign über classDef + class
-  classDef frontend fill:#fdf6e3,stroke:#262626,stroke-width:3px;
-  classDef backend  fill:#ebf5fb,stroke:#262626,stroke-width:3px;
-  class A frontend;
-  class B,C,D,E,F backend;
-
-  %% 2. Subgraph-Hintergrund (nur in aktuellen Mermaid‑Versionen)
-  style Frontend fill:#fff8dc,stroke:#262626,stroke-width:3px
-  style Backend  fill:#f0faff,stroke:#262626,stroke-width:3px
-
-  %% 3. Link-Styling
-  %% Index 0: A→B, Index 1: B→C, ..., Index 14: B-.->P, 15: B→DATA_DIR, 16: B→CONV_ROOT
-  linkStyle 0  stroke:#dc322f,stroke-width:3px;   %% HTTP Requests
-  linkStyle 14 stroke:#657b83,stroke-dasharray:2,2 %% Models (gestrichelt)
-  linkStyle 15 stroke:#859900,stroke-width:2px    %% Data storage
-  linkStyle 16 stroke:#2aa198,stroke-width:2px    %% Audio/Logs
 ```
 
 ## IEC working principle
@@ -95,6 +76,7 @@ ollama pull nomic-embed-text
 ```
 5. Install Python [3.10.11](https://www.python.org/downloads/release/python-31011/).
 6. Adjust the Edge TTS [voice](https://gist.github.com/BettyJJ/17cbaa1de96235a7f5773b8690a20462) as needed.
+
 7. Start the IEC app:
 ```bash 
 python app.py
