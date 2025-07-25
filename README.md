@@ -10,51 +10,8 @@ The function of controlling the response level of the model used by clicking a b
 Unlike IEC V1.5, which only extracted text from URLs and PDFs and answered questions to the LLM via a simple CLI call, IEC V2 forms a fully-fledged RAG pipeline: Extracted content is divided into token chunks, semantically vectorized using Ollama embeddings, and stored in a persistent FAISS index to find only truly relevant text passages per query. The frontend now offers a selection of models and skill levels, checkbox lists for multiple sources, and dynamic content and chat overviews, while on the server side, edge-tts generates high-quality MP3s and integrates them directly into the chat with play/pause buttons. The answers are created promptly for each source, formatted with references, and merged into a consolidated overall answer, and every conversation, including timestamps, files used, and audio files, is logged completely in JSON logs.
 
 ## IEC Structure
-```mermaid
----
-config:
-  theme: redux
-  look: neo
-  layout: elk
----
-flowchart TB
- subgraph Frontend["Frontend"]
-        B("Flask API")
-        A["HTML/CSS/JS"]
-  end
- subgraph Backend["Backend"]
-        C["extract_content"]
-        D["ask_question"]
-        E["list_models"]
-        F["list_extractions"]
-  end
- subgraph Indexation["Indexation"]
-        G["Parser (PDF/Web)"]
-        H["FAISS Index Builder"]
-        I["rag_index.faiss"]
-  end
- subgraph RAG_Flow["RAG_Flow"]
-        J["Retrieval via FAISS"]
-        K["Per-Source Prompting"]
-        L["Answer summary"]
-  end
- subgraph TTS_Logging["TTS_Logging"]
-        M["edge-tts → MP3"]
-        O["Conversational-Log (JSON)"]
-  end
-    A -- HTTP Requests --> B
-    B --> C & D & E & F
-    C --> G
-    G --> H
-    H --> I
-    D --> J
-    J --> K
-    K --> L
-    L --> M & O
-    B -. Models .-> P["ollama CLI"]
-    B -- Data storage --> DATA_DIR["DATA_DIR"]
-    B -- Audio/Logs --> CONV_ROOT["CONV_ROOT"]
-```
+The structure of the current [V2] IEC app is shown below.
+![ICE V2 Structure (SVG created with Mermaid](images/IECV2_APP.svg)
 
 ## IEC working principle
 Below is a short GIF showing the structure and function of the app.
