@@ -28,7 +28,7 @@ Alternatively, modern Platform-as-a-Service solutions such as Railway can be use
 ## Installing and running the application 
 1. Clone this repository on your local computer: 
 ```bash 
-git clone https://github.com/stefanpietrusky/iecvgit
+git clone https://github.com/stefanpietrusky/iecv.git
 ```
 2. Install the required dependencies:
 ```bash 
