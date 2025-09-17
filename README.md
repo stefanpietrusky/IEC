@@ -9,6 +9,8 @@ The function of controlling the response level of the model used by clicking a b
 
 Unlike IEC V1.5, which only extracted text from URLs and PDFs and answered questions to the LLM via a simple CLI call, IEC V2 forms a fully-fledged RAG pipeline: Extracted content is divided into token chunks, semantically vectorized using Ollama embeddings, and stored in a persistent FAISS index to find only truly relevant text passages per query. The frontend now offers a selection of models and skill levels, checkbox lists for multiple sources, and dynamic content and chat overviews, while on the server side, edge-tts generates high-quality MP3s and integrates them directly into the chat with play/pause buttons. The answers are created promptly for each source, formatted with references, and merged into a consolidated overall answer, and every conversation, including timestamps, files used, and audio files, is logged completely in JSON logs.
 
+> **⚠️ Work in Progress:** This prototyp is currently under active development. While I make it available for research purposes, please be aware that there will be some changes to the functional structure. I recognize that some current technical design decisions may not be optimal and are subject to revision. Researchers using this prototyp should expect potential updates and changes. I recommend checking back regularly for updates and versioning information.
+
 ## IEC Structure
 The structure of the current [V2] IEC app is shown below.
 ![ICE V2 Structure (SVG created with Mermaid](images/IECV2_APP.svg)
