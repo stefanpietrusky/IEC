@@ -1,7 +1,8 @@
 """
 title: IEC V2 [INDIVIDUAL EDUCATIONAL CHATBOT]
 author: stefanpietrusky
-author_url: https://downchurch.studio/
+author_url1: https://downchurch.studio/
+author_url2: https://urlz.fr/uj1I [CAEDHET/HCDH Heidelberg University]
 version: 1.0
 """
 
@@ -1364,3 +1365,4 @@ def delete_extraction(filename):
 if __name__ == '__main__':
     load_faiss_index() 
     app.run(debug=True, host="0.0.0.0", port=5000)
+
